@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout from Github'){
+            steps{
+            git branch: 'main', credentialsId: 'token-for-website', url: 'https://github.com/yousifIsaac/website.git'''
+            }
+        }
         stage ('Build') {
         steps{
             echo 'Build App'
